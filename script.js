@@ -44,4 +44,3 @@ let output4 = input4.filter(function(num){
 console.log(output4);
 
 // e. Return all the palindromes in an array
-let 
