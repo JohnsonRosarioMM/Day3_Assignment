@@ -44,3 +44,37 @@ let output4 = input4.filter(function(num){
 console.log(output4);
 
 // e. Return all the palindromes in an array
+var input5 = ['moon','noon','Radar','Ravi','dad','done','mom'];
+
+(function(){
+var output5 = [];
+var rev = input5.toString().split("").reverse().join("").split(",");
+
+for (let i = 0; i < input5.length; i++) {
+  for (let k = 0; k < rev.length; k++) {
+    if (input5[i] == rev[k]) {
+      output5.push(input5[i])
+    }
+  }
+}
+console.log(output5);
+})
+()
+
+// f. Return median of two sorted arrays of the same size.
+
+
+// g. Remove duplicates from an array
+
+let input7 = ['john','john','rio','ravi','josva','ravi'];
+ 
+function removeDup(input7) {
+    let ouput7 = [];
+    for (i = 0; i < input7.length; i++) {
+        if (ouput7.indexOf(input7[i]) === -1) {
+            ouput7.push(input7[i]);
+        }
+    }
+    console.log(ouput7);
+}
+removeDup(input7);
