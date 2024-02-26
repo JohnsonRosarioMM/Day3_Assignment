@@ -61,20 +61,70 @@ console.log(output5);
 })
 ()
 
-// f. Return median of two sorted arrays of the same size.
+// f. Return median of two sorted arrays of the same size.*
+var input6 = [1, 12, 15, 26, 38];
+var input7 = [2, 13, 17, 30, 45];
+var n1 = input6.length;
+var n2 = input7.length;
 
-
-// g. Remove duplicates from an array
-
-let input7 = ['john','john','rio','ravi','josva','ravi'];
- 
-function removeDup(input7) {
-    let ouput7 = [];
-    for (i = 0; i < input7.length; i++) {
-        if (ouput7.indexOf(input7[i]) === -1) {
-            ouput7.push(input7[i]);
+(function(input6, input7, n){
+    var i = 0; 
+    var j = 0; 
+    var count;
+    var m1 = -1, m2 = -1;
+for (count = 0; count <= n; count++){
+        if (i == n){
+            m1 = m2;
+            m2 = input7[0];
+        }
+        else if (j == n){
+            m1 = m2;
+            m2 = input6[0];
+        }
+        if (input6[i] <= input7[j]){
+            m1 = m2; 
+            m2 = input6[i];
+            i++;
+        }
+        else{
+            m1 = m2; 
+            m2 = input7[j];
+            j++;
         }
     }
-    console.log(ouput7);
+    console.log( (m1 + m2)/2);
+})
+(input6, input7, n1);
+
+// g. Remove duplicates from an array
+let input8 = ['john','john','rio','ravi','josva','ravi'];
+ 
+let removeDup = function (input8) {
+    let ouput8 = [];
+    for (i = 0; i < input8.length; i++) {
+        if (ouput8.indexOf(input8[i]) === -1) {
+            ouput8.push(input8[i]);
+        }
+    }
+    console.log(ouput8);
 }
-removeDup(input7);
+removeDup(input8);
+
+// h. Rotate an array by k times.*
+let input9 = [1,4,7,9,8];
+let ouput9 = [];
+let Rotate = function RightRotate (a, k){ 
+    k = k % a.length; 
+    for (let i = 0; i < a.length; i++) { 
+        if (i < k) { 
+            ouput9.push(a[a.length + i - k]); 
+        } 
+        else { 
+            ouput9.push(a[i - k]); 
+        } 
+    }  
+    console.log(ouput9)
+}
+Rotate(input9,4);
+
+//2. Do the below programs in arrow functions.
