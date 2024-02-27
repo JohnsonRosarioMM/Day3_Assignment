@@ -31,7 +31,7 @@ let input3 = [2,3,4,5,6];
 })
 ()
 
-// d. Return all the prime numbers in an array
+// d. Return all the prime numbers in an array*
 let input4 = [1,2,3,4,5,6,7,8,9,10];
 let output4 = input4.filter(function(num){
     if (num < 2) return false;
@@ -43,17 +43,18 @@ let output4 = input4.filter(function(num){
 })
 console.log(output4);
 
+
 // e. Return all the palindromes in an array
-var input5 = ['moon','noon','Radar','Ravi','dad','done','mom'];
+var arr = ['moon','noon','Radar','Ravi','dad','done','mom'];
 
 (function(){
 var output5 = [];
-var rev = input5.toString().split("").reverse().join("").split(",");
+var rev = arr.toString().split("").reverse().join("").split(",");
 
-for (let i = 0; i < input5.length; i++) {
+for (let i = 0; i < arr.length; i++) {
   for (let k = 0; k < rev.length; k++) {
-    if (input5[i] == rev[k]) {
-      output5.push(input5[i])
+    if (arr[i] == rev[k]) {
+      output5.push(arr[i])
     }
   }
 }
@@ -61,7 +62,7 @@ console.log(output5);
 })
 ()
 
-// f. Return median of two sorted arrays of the same size.*
+// f. Return median of two sorted arrays of the same size*
 var input6 = [1, 12, 15, 26, 38];
 var input7 = [2, 13, 17, 30, 45];
 var n1 = input6.length;
@@ -110,7 +111,7 @@ let removeDup = function (input8) {
 }
 removeDup(input8);
 
-// h. Rotate an array by k times.*
+// h. Rotate an array by k times*
 let input9 = [1,4,7,9,8];
 let ouput9 = [];
 let Rotate = function RightRotate (a, k){ 
@@ -127,4 +128,57 @@ let Rotate = function RightRotate (a, k){
 }
 Rotate(input9,4);
 
-//2. Do the below programs in arrow functions.
+//2. Do the below programs in arrow functions
+
+// a. Print odd numbers in an array
+let oddfun = (arr) => {
+    let oddouput = [];
+    for(i = 0; i < arr.length; i++){ 
+        if(i % 2 !== 0){
+        oddouput.push(i);}
+    }
+    console.log(oddouput)
+}
+oddfun([1,2,3,4,5,6,7,8,9]);
+
+// b. Convert all the strings to title caps in a string array
+let ar = ['john','ravi','ram'];
+    let capsfun = ar.map((str) => str.toUpperCase());
+    console.log(capsfun);
+    
+// c. Sum of all numbers in an array
+let Sumall = (arr) => {
+    let sumoutput = 0; 
+    for(i=0; i < arr.length;i++){
+        sumoutput += arr[i];
+    }
+    console.log(sumoutput)
+}   
+Sumall([6,2,3,4]);
+
+// d. Return all the prime numbers in an array #
+let prime = (arr) => {
+    let primeoutput = [];
+    for(i=0;i<arr.length;i++){ 
+        if(arr[i] !== 1 && arr[i] % 2 !== 0 && arr[i] % 3 !== 0){
+            primeoutput.push(arr[i])
+        }
+    }
+    console.log(primeoutput)
+}
+prime([1,2,3,7,11,13,27])
+
+// e. Return all the palindromes in an array*
+let pal = (arr) => {
+    var paloutput = [];
+    var rev = arr.toString().split("").reverse().join("").split(",");
+for (let i = 0; i < arr.length; i++) {
+  for (let j = 0; j < rev.length; j++) {
+    if (arr[i] == rev[j]) {
+      paloutput.push(arr[i])
+    }
+  }
+}
+console.log(paloutput);
+}
+pal(['moon','noon','Radar','Ravi','dad','done','mom'])
